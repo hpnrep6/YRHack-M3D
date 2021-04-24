@@ -4,6 +4,7 @@ var b3 = document.getElementById('3d');
 var f2 = document.getElementById('image');
 var f3 = document.getElementById('model');
 
+
 b2.addEventListener('click', (e) => {
     f2.style.visibility = 'visible'
 })
@@ -11,3 +12,5 @@ b2.addEventListener('click', (e) => {
 b3.addEventListener('click', (e) => {
     f2.style.visibility = 'hidden'
 })
+
+f3.src = "https://go.echoar.xyz/ZMu5"
