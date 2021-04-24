@@ -34,10 +34,10 @@ router.post('/add', upload.single('model'), async (req, res) => {
                 "Content-Type": "multipart/form-data"
             },
             formData : {
-                'key': 'bitter-violet-5773',
+                'key': 'key',
                 'target_type': '2',
                 'hologram_type': '2',
-                'email': 'hpnrep6@gmail.com',
+                'email': 'email@gmail.com',
                 'type': 'upload',
                 "file_model" : fs.createReadStream(__dirname + '/file.glb')
             }

@@ -11,7 +11,7 @@ const router = express.Router();
 
 const SERVER_ERR = 'Server Error';
 
-const TOKEN = 'YRHACKS2020HPNREP6kEy3123AS0m10jd12311ap1p';
+const TOKEN = 'token';
 
 router.get('/get/:id', async (req, res) => {
     try {

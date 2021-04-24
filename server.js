@@ -10,7 +10,7 @@ const router = express.Router();
 
 const port = process.env.PORT || 3000;
 
-const URI = 'mongodb+srv://hpn:soyuznerushimy@cluster0.qatum.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const URI = 'mongouri'
 
 async function initDB(name) {
     await counter.exists({

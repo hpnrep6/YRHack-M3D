@@ -4,7 +4,7 @@ const schema = require('../models/user-model');
 
 async function verify(req, res, next) {
     try{
-        let token = jwt.verify(req.body.token, 'YRHACKS2020HPNREP6kEy3123AS0m10jd12311ap1p');
+        let token = jwt.verify(req.body.token, 'token');
         let decodedToken = token;
 
         let id = parseInt(decodedToken.uid);
