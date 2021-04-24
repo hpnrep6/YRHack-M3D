@@ -9,6 +9,10 @@
     border:0;
 }
 
+#image {
+    visibility: hidden;
+}
+
 .info {
     position: absolute;
     width: 30%;
