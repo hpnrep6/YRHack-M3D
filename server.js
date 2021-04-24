@@ -77,6 +77,33 @@ app.get('/show/:id', (req, res) => {
     res.sendFile(__dirname + '/public/product/product.html');
 });
 
+app.get('/upload/:id', (req, res) => {
+    if(req.params.id == 'upload.css') {
+        res.sendFile(__dirname + '/public/upload/upload.css');
+        return;
+    } else if (req.params.id == 'product.js') {
+        res.sendFile(__dirname + '/public/upload/upload.js');
+        return;
+    }
+    res.sendFile(__dirname + '/public/upload/upload.html');
+});
+app.get('/upload', (req, res) => {
+    res.sendFile(__dirname + '/public/upload/upload.html');
+})
+
+app.get('/login', (req, res) => {
+    res.sendFile(__dirname + '/public/login/login.html');
+})
+
+app.get('/login/:id', (req, res) => {
+    if(req.params.id == 'login.css') {
+        res.sendFile(__dirname + '/public/login/login.css');
+        return;
+    } else if (req.params.id == 'login.js') {
+        res.sendFile(__dirname + '/public/login/login.js');
+        return;
+    }
+});
 
 const userRoute = require('./server/user');
 app.use('/user', userRoute);

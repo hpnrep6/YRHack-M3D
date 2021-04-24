@@ -34,7 +34,7 @@ router.post('/add', upload.single('model'), async (req, res) => {
                 "Content-Type": "multipart/form-data"
             },
             formData : {
-                'key': 'summer-morning-6649',
+                'key': 'bitter-violet-5773',
                 'target_type': '2',
                 'hologram_type': '2',
                 'email': 'hpnrep6@gmail.com',

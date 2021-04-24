@@ -49,7 +49,7 @@ router.post('/login', async (req, res) => {
         }
 
         if(!(req.body.password && req.body.username)) {
-            res.status(401).json({message: 'Invalid'});
+            res.status(401).json({message: 'Invaalid'});
             return;
         }
 
@@ -64,12 +64,14 @@ router.post('/login', async (req, res) => {
                 res.status(500).json({
                     message: SERVER_ERR
                 });
+                return
             }
 
             if(!user) {
                 res.status(401).json({
                     message: INVALID
                 });
+                return
             }
 
             bcrypt.compare(pass, user.password, (error, response) => {
@@ -87,7 +89,7 @@ router.post('/login', async (req, res) => {
                         expiresIn: "7d"
                     });
 
-                    res.status(200).json({message: 'Login Valid', token: token});
+                    res.status(200).json({message: 'Logged in', token: token});
                     return;
                 } else {
                     res.status(401).json({
@@ -165,7 +167,9 @@ router.post('/add', async (req, res) => {
                     });
 
                     user.save().then(result => {
-                        res.redirect('/');
+                        res.status(200).json( {
+                            message: 'User registered. You may sign in.'
+                        })
                     }).catch(err => {
                         console.log(error);
                         res.status(500).json({message: SERVER_ERR});

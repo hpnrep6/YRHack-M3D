@@ -14,13 +14,32 @@ const router = express.Router();
 
 const SERVER_ERR = 'Server Error';
 
-router.get('/get', async (req, res) => {
+
+router.get('/getall', async (req, res) => {
     try {
         const filter = {};
         const all = await schema.find(filter);
 
         res.status(200).json(
             all
+        )
+    } catch(error) {
+        res.status(500).json({
+            message: SERVER_ERR
+        });
+        console.log(error);
+        return;
+    }
+})
+
+router.get('/get/:id', async (req, res) => {
+    try {
+        let id = parseInt(req.params.id);
+
+        const product = await schema.findById(id);
+
+        res.status(200).json(
+            product
         )
     } catch(error) {
         res.status(500).json({
@@ -73,7 +92,7 @@ router.post('/add', verify, (req, res) => {
 
             const prod = new schema({
                 _id: counter,
-                user: req.user.username,
+                user: req.user.contactInfo,
                 name: name,
                 description: desc,
                 price: price,
