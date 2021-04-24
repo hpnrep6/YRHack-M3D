@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col_bkg {
+    background-color: #fff;
+    border-radius: 0 0 25px 25px;
+    padding: 15px 10px;
+    min-width: 200px;
+}
+
+li, a {
+    text-decoration: none;
+}
+
+.nav_links li{
+    display: inline-block;
+    padding: 0 40px;
+}
+
+@media (max-width: 500px) {
+    .nav_links li{
+        padding: 0 10px;
+    }
+    
+}
+
+.nav_links {
+    display: inline-block;
+}
+
+.head {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.head img {
+    width: 100%;
+    height: 100%;
+}
+
+.cat {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    padding: 20px 5% 150px 5%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row-gap: 30px;
+    
+}
+
+.block {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-left: calc((100% - 350px)/2);
+
+}
+
+.item {
+    width: 350px;
+    height: 500px;
+    background-color: #222;
+    border-radius: 20px;
+}
+
+.item img {
+    width: 350px;
+    height: 350px;
+    padding: 12px;
+    border-radius: 30px;
+}
+
+.item a {
+    text-decoration: none;
+}
+
+.item_info {
+    height: 150px;
+    padding-left: 25px;
+    padding-right: 25px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.item_price {
+    font-size: 30px;
+    color: white;
+}
+
+.item_name {
+    font-size: 25px;
+    color: white;
+}
+
+@media (max-width: 1600px) {
+    .cat {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 1200px) {
+    .cat {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 800px) {
+    .cat {
+        grid-template-columns: 1fr;
+    }
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: #555;
+}
