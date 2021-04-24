@@ -25,3 +25,8 @@
 .item {
     padding: 20px;
 }
+
+.toggle button {
+    width: 49%;
+    height: 30px;
+}
